@@ -102,14 +102,6 @@
     programs.ssh.extraConfig = ''
       StrictHostKeyChecking no
     '';
-    
-    services.hydra.package = pkgs.hydra.overrideAttrs (o: { src = (pkgs.fetchFromGitHub {
-         owner = "nixos";
-         repo = "hydra";
-         rev = "e0f204f3da6245fbaf5cb9ef59568b775ddcb929";
-         sha256 = "66002da8d68027b8a5edaf03bd81dd8b6327397311d71398776e1d3ef1ec96e1";
-         });
-       });
        
     services.hydra = {
       enable = true;  
@@ -117,6 +109,13 @@
       notificationSender = "hydra@${hostName}";
       useSubstitutes = true;
       smtpHost = "localhost";
+      package = pkgs.hydra.overrideAttrs (o: { src = (pkgs.fetchFromGitHub {
+         owner = "nixos";
+         repo = "hydra";
+         rev = "e0f204f3da6245fbaf5cb9ef59568b775ddcb929";
+         sha256 = "66002da8d68027b8a5edaf03bd81dd8b6327397311d71398776e1d3ef1ec96e1";
+         });
+       });
       extraConfig = ''
         store_uri = ${config.simple-hydra.store_uri}
       ''; 
