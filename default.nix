@@ -110,11 +110,11 @@
       useSubstitutes = true;
       smtpHost = "localhost";
       package = pkgs.hydra.overrideAttrs (o: { src = (pkgs.fetchFromGitHub {
-         owner = "NixOS";
-         repo = "hydra";
-         rev = "e0f204f3da6245fbaf5cb9ef59568b775ddcb929";
-         sha256 = "66002da8d68027b8a5edaf03bd81dd8b6327397311d71398776e1d3ef1ec96e1";
-         });
+              owner = "o1lo01ol1o";
+              repo = "hydra";
+         rev = "8953ae771b59c8512f17938f09711ee54db27934";
+        sha256 = "13bsmzmnajw6429jpw5i1l08d26b6959qyghfy9rszgl70zsf89a";
+        });
        });
       extraConfig = ''
         store_uri = ${config.simple-hydra.store_uri}
