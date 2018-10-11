@@ -110,7 +110,7 @@
       useSubstitutes = true;
       smtpHost = "localhost";
       package = pkgs.hydra.overrideAttrs (o: { src = (pkgs.fetchFromGitHub {
-         owner = "nixos";
+         owner = "NixOS";
          repo = "hydra";
          rev = "e0f204f3da6245fbaf5cb9ef59568b775ddcb929";
          sha256 = "66002da8d68027b8a5edaf03bd81dd8b6327397311d71398776e1d3ef1ec96e1";
